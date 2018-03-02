@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f734e7df-a905-4395-b2b7-7ea2cb84d948" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Supermarket/SuperMarket.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Simulator/Event/Event.java" afterPath="$PROJECT_DIR$/src/Simulator/Event/Event.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Simulator/Event/EventHolder.java" afterPath="$PROJECT_DIR$/src/Simulator/Event/EventHolder.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Simulator/Simulator.java" afterPath="$PROJECT_DIR$/src/Simulator/Simulator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Simulator/State/State.java" afterPath="$PROJECT_DIR$/src/Simulator/State/State.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/labb5/FIFO.java" afterPath="$PROJECT_DIR$/src/labb5/FIFO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/labb5/Main.java" afterPath="$PROJECT_DIR$/src/labb5/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/random/ExponentialRandomStream.java" afterPath="$PROJECT_DIR$/src/random/ExponentialRandomStream.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -361,7 +353,7 @@
       <option name="presentableId" value="Default" />
       <updated>1519657763728</updated>
       <workItem from="1519657767720" duration="739000" />
-      <workItem from="1519981739788" duration="15744000" />
+      <workItem from="1519981739788" duration="15779000" />
     </task>
     <task id="LOCAL-00001" summary="Init some classes">
       <created>1519982042717</created>
@@ -377,11 +369,18 @@
       <option name="project" value="LOCAL" />
       <updated>1519983662955</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="A lot of stuff.">
+      <created>1519997516975</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1519997516975</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16483000" />
+    <option name="totallyTimeSpent" value="16518000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1920" height="1053" extended-state="6" />
@@ -396,7 +395,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32976446" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32976446" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -425,7 +424,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Init some classes" />
     <MESSAGE value="Fixed events and some stuff." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed events and some stuff." />
+    <MESSAGE value="A lot of stuff." />
+    <option name="LAST_COMMIT_MESSAGE" value="A lot of stuff." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
