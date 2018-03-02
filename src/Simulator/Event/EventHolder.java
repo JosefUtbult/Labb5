@@ -2,7 +2,6 @@ package Simulator.Event;
 
 import java.util.Comparator;
 import Simulator.Simulator;
-import jdk.nashorn.internal.runtime.regexp.joni.exception.ValueException;
 
 import java.util.ArrayList;
 
@@ -16,13 +15,32 @@ public class EventHolder {
 
 	public void add(Event event){
 
-		TimeComparitor timeComparitor = new TimeComparitor();
-
 		this.eventQueue.add(event);
-		this.eventQueue.sort(timeComparitor);
+		this.eventQueue.sort(new Comparator<Event>() {
+			@Override
+			public int compare(Event o1, Event o2) {
+
+				return Integer.compare(((Event)o1).getEventTime(), ((Event)o2).getEventTime());
+
+			}
+		});
+
+		/*String temp = "eventQueue: ";
+
+		for (Event currentEvent : this.eventQueue) {
+			temp += currentEvent + ", ";
+		}
+
+		System.out.println(temp);
+*/
+		return;
 	}
 
 	public Event getEvent(){
+		if(this.eventQueue.size() < 1){
+			throw new Error("There is no more events.");
+		}
+
 		return this.eventQueue.get(0);
 	}
 
@@ -31,19 +49,4 @@ public class EventHolder {
 		this.eventQueue.remove(0);
 	}
 
-}
-
-
-class TimeComparitor implements Comparator {
-
-	@Override
-	public int compare(Object o1, Object o2) {
-
-		if(o1.getClass() != Event.class || o2.getClass() != Event.class){
-			throw new  ValueException("The objects need to be of the type \"Event\".");
-		}
-
-		return Integer.compare(((Event)o1).getEventTime(), ((Event)o2).getEventTime());
-
-	}
 }

@@ -2,25 +2,47 @@ package Simulator;
 
 import Simulator.Event.Event;
 import Simulator.Event.EventHolder;
+import Simulator.State.State;
 
-import java.sql.Time;
-import java.time.*;
+
+import java.util.Date;
 
 public class Simulator {
 
-	EventHolder eventHolder;
+	private EventHolder eventHolder;
+	private State state;
 
-	public Simulator(){
+	public Simulator(State state){
 		this.eventHolder = new EventHolder();
+		this.state = state;
 
-		this.eventHolder.add(new Event(3));
-		this.eventHolder.add(new Event(1));
-		this.eventHolder.add(new Event(5));
 	}
 
 	public void run(){
-		while (true) {
+		while (this.state.getrun()) {
+
+
+			try {
+				while (getTime() < this.eventHolder.getEvent().getEventTime()){
+				}
+			} catch (Error e){
+				break;
+			}
+
+			Event temp = this.eventHolder.getEvent();
+			this.eventHolder.removeFirst();
+
+			temp.run();
 		}
+	}
+
+	public void addEvent(Event event){
+		this.eventHolder.add(event);
+
+	}
+
+	public long getTime(){
+		return new Date().getTime() - state.getSTARTTIME();
 	}
 
 }
