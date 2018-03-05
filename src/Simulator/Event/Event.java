@@ -1,13 +1,14 @@
 package Simulator.Event;
 
+/**
+ *An event that is extended to other classes. It has an eventTime, a time it is to be executed, and a run, a function
+ *that is called after the eventTime
+ */
 public class Event {
-
-	protected int personNumber;
 	protected int eventTime;
 
-	public Event(int eventTime, int personNumber){
+	public Event(int eventTime){
 		this.eventTime = eventTime;
-		this.personNumber = personNumber;
 
 		//System.out.format("Added event at %d\n", this.eventTime);
 	}
@@ -20,8 +21,4 @@ public class Event {
 		return this.eventTime;
 	}
 
-	@Override
-	public String toString() {
-		return String.format("%d (%d)", this.personNumber, this.eventTime);
-	}
 }

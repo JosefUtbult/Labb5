@@ -1,35 +1,39 @@
 package Supermarket;
 
 import Simulator.Event.Event;
+import Simulator.Event.Start;
+import Simulator.Event.Stop;
 import Simulator.Simulator;
 import Simulator.State.State;
 import labb5.FIFO;
 import random.ExponentialRandomStream;
+import random.UniformRandomStream;
+import java.util.Date;
 
+
+/**
+ * A class to simulate a super marked.
+ */
 public class SuperMarket {
 	private Simulator simulator;
-	private State state;
-	private ExponentialRandomStream erandomstream;
 	private int maxpersonsinsupermarket = 10;
 	private int personsinsupermarket;
 	private Register register;
 
 	public SuperMarket(){
-		this.state = new State();
-		this.simulator = new Simulator(state);
-		this.erandomstream = new ExponentialRandomStream(10000);
+
+
+		this.simulator = new Simulator(new SupermarketState());
+
 		this.personsinsupermarket = 0;
 		this.register = new Register(this.simulator);
 
-		for(int i = 0; i < 40; i++){
-			this.simulator.addEvent(new GoIn(i, (int) (erandomstream.customNext() + simulator.getTime()), simulator));
-		}
-
+		this.simulator.addEvent(new SuperStart(this.simulator));
 		this.simulator.run();
 
 	}
 
-	public boolean enterStore() {
+	public boolean enterStore(int personNumber) {
 		if(this.personsinsupermarket < this.maxpersonsinsupermarket) {
 			this.personsinsupermarket++;
 			return true;
@@ -37,16 +41,32 @@ public class SuperMarket {
 		return false;
 	}
 
+	public SupermarketState getState(){
+		return (SupermarketState) this.simulator.getState();
+	}
 
+	private class SuperStart extends Start{
 
-	private class GoIn extends Event{
+		public SuperStart(Simulator simulator) {
+			super(simulator);
+
+		}
+		@Override
+		public void run(){
+			this.simulator.addEvent(new GeneratePerson(((SupermarketState)simulator.getState()).clockPerson(), ((SupermarketState)simulator.getState()).getTimeKeeper().getAddPersonTime().next(), this.simulator));
+
+		}
+
+	}
+
+	private class GeneratePerson extends Event{
 
 		private Simulator simulator;
 		private int personNumber;
 
-		public GoIn(int personNumber, int eventTime, Simulator simulator) {
+		public GeneratePerson(int personNumber, int eventTime, Simulator simulator) {
 
-			super(eventTime, personNumber);
+			super(eventTime);
 			this.simulator = simulator;
 			this.personNumber = personNumber;
 			System.out.format("Added person nr %d event at %d\n", personNumber, eventTime);
@@ -54,9 +74,11 @@ public class SuperMarket {
 
 		@Override
 		public void run(){
-			if (enterStore()) {
+			this.simulator.addEvent(new GeneratePerson(getState().clockPerson(), ((SupermarketState)simulator.getState()).getTimeKeeper().getAddPersonTime().next(), this.simulator));
+
+			if (enterStore(personNumber)) {
 				System.out.format("Im(%d) going in.\n", this.personNumber);
-				this.simulator.addEvent(new BuyShit(personNumber, (int) (erandomstream.customNext() + simulator.getTime()), simulator));
+				this.simulator.addEvent(new BuyShit(personNumber, ((SupermarketState)simulator.getState()).getTimeKeeper().getByShitTime().next(), simulator));
 			}
 			else {
 				System.out.println("Could not enter store. Too few children available for service.");
@@ -68,7 +90,7 @@ public class SuperMarket {
 		private int personNumber;
 		private Simulator simulator;
 		public BuyShit(int personNumber, int eventTime, Simulator simulator) {
-			super(eventTime, personNumber);
+			super(eventTime);
 			this.simulator = simulator;
 			this.personNumber = personNumber;
 			System.out.format("Person number (%d) is looking for stuff.\n", this.personNumber);
@@ -96,7 +118,7 @@ public class SuperMarket {
 		public void add(int personNumber){
 
 			if(registerInUse < numberOfRegisters){
-				this.simulator.addEvent(new ServeCustomer(personNumber, (int) (erandomstream.customNext() + simulator.getTime()), simulator, this));
+				this.simulator.addEvent(new ServeCustomer(personNumber, ((SupermarketState)simulator.getState()).getTimeKeeper().getServeTime().next(), simulator, this));
 				this.registerInUse ++;
 			}
 			else{
@@ -115,7 +137,7 @@ public class SuperMarket {
 			System.out.format("Served customer nr %d\n", personNumber);
 
 			if(this.fifo.size() > 0){
-				this.simulator.addEvent(new ServeCustomer(fifo.get(), (int)(erandomstream.customNext() + simulator.getTime()), simulator, this));
+				this.simulator.addEvent(new ServeCustomer(fifo.get(),((SupermarketState)simulator.getState()).getTimeKeeper().getServeTime().next(), simulator, this));
 			}
 			else {
 				this.registerInUse --;
@@ -130,9 +152,10 @@ public class SuperMarket {
 
 			private Simulator simulator;
 			private Register register;
+			private int personNumber;
 
 			public ServeCustomer(int personNumber, int eventTime, Simulator simulator, Register register){
-				super(eventTime, personNumber);
+				super(eventTime);
 
 				this.personNumber = personNumber;
 				this.simulator = simulator;
@@ -143,6 +166,13 @@ public class SuperMarket {
 			public void run(){
 				register.serve(this.personNumber);
 			}
+		}
+	}
+
+	private class CloseStore extends Event{
+
+		public CloseStore(int eventTime) {
+			super(eventTime);
 		}
 	}
 

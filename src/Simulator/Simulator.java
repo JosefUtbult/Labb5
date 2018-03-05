@@ -7,6 +7,11 @@ import Simulator.State.State;
 
 import java.util.Date;
 
+
+/**
+ * A class to hold a simulation. It has the possibility to add an event that is to be executed at a specific time and
+ * appends this to a queue of events that is placed in order of timing and is later executed at its correlated time.
+ */
 public class Simulator {
 
 	private EventHolder eventHolder;
@@ -18,12 +23,19 @@ public class Simulator {
 
 	}
 
+	public State getState(){
+		return this.state;
+	}
+
+	/**
+	 * Runs the simulation. Takes the next event, waits until it is to be executed, and then runs the function "run"
+	 */
 	public void run(){
-		while (this.state.getrun()) {
+		while (this.state.getRun()) {
 
 
 			try {
-				while (getTime() < this.eventHolder.getEvent().getEventTime()){
+				while (this.state.getTime() < this.eventHolder.getEvent().getEventTime()){
 				}
 			} catch (Error e){
 				break;
@@ -36,13 +48,13 @@ public class Simulator {
 		}
 	}
 
+	/**
+	 * Forwards an event to the eventHolder.
+	 * @param event
+	 */
 	public void addEvent(Event event){
 		this.eventHolder.add(event);
 
-	}
-
-	public long getTime(){
-		return new Date().getTime() - state.getSTARTTIME();
 	}
 
 }

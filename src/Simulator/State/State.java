@@ -14,14 +14,23 @@ public class State {
 		run = true;
 		STARTTIME = new Date().getTime();
 	}
-	public boolean getrun(){
-		return run;
-	}
 
 	public long getSTARTTIME(){
 		return this.STARTTIME;
 	}
 
+	public boolean getRun() {
+		return run;
+	}
 
+	public void setRun(boolean run) {
+		this.run = run;
+	}
 
+	/**
+	 * @return Returns the current time in milliseconds in relation to the states STARTTIME.
+	 */
+	public long getTime(){
+		return new Date().getTime() - getSTARTTIME();
+	}
 }
