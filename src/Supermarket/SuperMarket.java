@@ -5,9 +5,8 @@ import Simulator.Event.Start;
 import Simulator.Simulator;
 import labb5.Queue;
 
-
 /**
- * A class to simulate a super marked.
+ * A class to simulate a super market.
  */
 public class SuperMarket {
     private Simulator simulator;
