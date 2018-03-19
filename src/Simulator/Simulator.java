@@ -28,8 +28,6 @@ public class Simulator {
      */
     public void run() {
         while (this.state.getRun()) {
-
-
             try {
                 while (this.state.getTime() < this.eventHolder.getEvent().getEventTime()) {
                 }
