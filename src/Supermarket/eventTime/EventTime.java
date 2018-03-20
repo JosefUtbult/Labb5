@@ -1,5 +1,6 @@
-package Supermarket;
+package Supermarket.eventTime;
 
+import Supermarket.SupermarketState;
 import random.UniformRandomStream;
 
 import java.util.Date;

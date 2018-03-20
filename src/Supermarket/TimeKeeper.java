@@ -1,5 +1,9 @@
 package Supermarket;
 
+import Supermarket.eventTime.AddPersonTime;
+import Supermarket.eventTime.ByShitTime;
+import Supermarket.eventTime.ServeTime;
+
 class TimeKeeper {
     private AddPersonTime addPersonTime;
     private ByShitTime byShitTime;
