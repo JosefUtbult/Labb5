@@ -8,11 +8,15 @@ import java.util.ArrayList;
 
 /**
  * Holds a series of events, and appends them in the order of there execution.
+ * @author Oscar Lundberg, Oscar Rosberg, Isak Sundell, Josef Utbult
  */
 public class EventHolder {
 
 	private ArrayList<Event> eventQueue;
 
+	/**
+	 * Creates the event holder
+	 */
 	public EventHolder(){
 		this.eventQueue = new ArrayList<>();
 	}
@@ -28,7 +32,7 @@ public class EventHolder {
 			@Override
 			public int compare(Event o1, Event o2) {
 
-				return Integer.compare(((Event)o1).getEventTime(), ((Event)o2).getEventTime());
+				return Double.compare(((Event)o1).getEventTime(), ((Event)o2).getEventTime());
 
 			}
 		});

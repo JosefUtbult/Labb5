@@ -4,36 +4,53 @@ import Simulator.Event.Event;
 import Simulator.Event.Start;
 import Simulator.Event.Stop;
 import Simulator.Simulator;
-import Simulator.State.State;
 import labb5.FIFO;
-import random.ExponentialRandomStream;
-import random.UniformRandomStream;
-import java.util.Date;
-
 
 /**
  * A class to simulate a super marked.
+ * @author Oscar Lundberg, Oscar Rosberg, Isak Sundell, Josef Utbult
  */
 public class SuperMarket {
 	private Simulator simulator;
-	private int maxpersonsinsupermarket = 10;
+	private int maxpersonsinsupermarket;
 	private int personsinsupermarket;
 	private Register register;
+	private boolean open;
+	private Param param;
+	private OutputParam outputParam;
 
-	public SuperMarket(){
+	/**
+	 * Runs the simulated supermarket and puts the results in the outputParam object.
+	 * @param param A param of type Param to hold the params
+	 */
+	public SuperMarket(Param param){
 
+		this.param = param;
+		this.open = true;
+		this.simulator = new Simulator(new SupermarketState(param));	//Generates some stuff
+		this.outputParam = new OutputParam();
+		this.register = new Register(this);
+		this.maxpersonsinsupermarket = param.maxNumOfPpl;
 
-		this.simulator = new Simulator(new SupermarketState());
+		this.getState().setStoreOpen(true);
+		((SupermarketState)this.simulator.getState()).setFIFO(this.register.getFifo());
 
 		this.personsinsupermarket = 0;
-		this.register = new Register(this.simulator);
 
-		this.simulator.addEvent(new SuperStart(this.simulator));
+		this.simulator.addEvent(new SuperStart(this));	//Adds a start event and begins to run
 		this.simulator.run();
-
 	}
 
-	public boolean enterStore(int personNumber) {
+	/**
+	 * Guess
+	 * @return the results of the simulation in an OutputParam-object.
+	 */
+	public OutputParam getOutput(){
+		return this.outputParam;
+	}
+
+	//Checks if the store is full
+	boolean enterStore(int personNumber) {
 		if(this.personsinsupermarket < this.maxpersonsinsupermarket) {
 			this.personsinsupermarket++;
 			return true;
@@ -41,139 +58,60 @@ public class SuperMarket {
 		return false;
 	}
 
+	/**
+	 * @return The current state-object.
+	 */
 	public SupermarketState getState(){
 		return (SupermarketState) this.simulator.getState();
 	}
 
-	private class SuperStart extends Start{
 
-		public SuperStart(Simulator simulator) {
-			super(simulator);
-
-		}
-		@Override
-		public void run(){
-			this.simulator.addEvent(new GeneratePerson(((SupermarketState)simulator.getState()).clockPerson(), ((SupermarketState)simulator.getState()).getTimeKeeper().getAddPersonTime().next(), this.simulator));
-
-		}
-
+	public boolean getOpen() {
+		return open;
 	}
 
-	private class GeneratePerson extends Event{
-
-		private Simulator simulator;
-		private int personNumber;
-
-		public GeneratePerson(int personNumber, int eventTime, Simulator simulator) {
-
-			super(eventTime);
-			this.simulator = simulator;
-			this.personNumber = personNumber;
-			System.out.format("Added person nr %d event at %d\n", personNumber, eventTime);
-		}
-
-		@Override
-		public void run(){
-			this.simulator.addEvent(new GeneratePerson(getState().clockPerson(), ((SupermarketState)simulator.getState()).getTimeKeeper().getAddPersonTime().next(), this.simulator));
-
-			if (enterStore(personNumber)) {
-				System.out.format("Im(%d) going in.\n", this.personNumber);
-				this.simulator.addEvent(new BuyShit(personNumber, ((SupermarketState)simulator.getState()).getTimeKeeper().getByShitTime().next(), simulator));
-			}
-			else {
-				System.out.println("Could not enter store. Too few children available for service.");
-			}
-		}
+	public void setOpen(boolean open) {
+		this.open = open;
 	}
 
-	private class BuyShit extends Event {
-		private int personNumber;
-		private Simulator simulator;
-		public BuyShit(int personNumber, int eventTime, Simulator simulator) {
-			super(eventTime);
-			this.simulator = simulator;
-			this.personNumber = personNumber;
-			System.out.format("Person number (%d) is looking for stuff.\n", this.personNumber);
-		}
-		@Override
-		public void run() {
-			System.out.format("Person number %d has collected a pair of socks and tampons and an ugandan child.\n", personNumber);
-			register.add(this.personNumber);
-		}
+	public Param getParam() {
+		return param;
 	}
 
-	private class Register{
-		private int numberOfRegisters = 5;
-		private int registerInUse;
-		private Simulator simulator;
-		private FIFO fifo;
-
-		public Register(Simulator simulator){
-			super();
-			this.registerInUse = 0;
-			this.simulator = simulator;
-			this.fifo = new FIFO();
-		}
-
-		public void add(int personNumber){
-
-			if(registerInUse < numberOfRegisters){
-				this.simulator.addEvent(new ServeCustomer(personNumber, ((SupermarketState)simulator.getState()).getTimeKeeper().getServeTime().next(), simulator, this));
-				this.registerInUse ++;
-			}
-			else{
-				fifo.add(personNumber);
-			}
-
-			/*if(this.queue.size() < numberOfRegisters - registerInUse){
-				this.registerInUse ++;
-
-				this.simulator.addEvent(new ServeCustomer(this.get(), (int) erandomstream.customNext(), simulator, this));
-			}
-			*/
-		}
-
-		public void serve(int personNumber){
-			System.out.format("Served customer nr %d\n", personNumber);
-
-			if(this.fifo.size() > 0){
-				this.simulator.addEvent(new ServeCustomer(fifo.get(),((SupermarketState)simulator.getState()).getTimeKeeper().getServeTime().next(), simulator, this));
-			}
-			else {
-				this.registerInUse --;
-			}
-
-			personsinsupermarket --;
-
-
-		}
-
-		class ServeCustomer extends Event{
-
-			private Simulator simulator;
-			private Register register;
-			private int personNumber;
-
-			public ServeCustomer(int personNumber, int eventTime, Simulator simulator, Register register){
-				super(eventTime);
-
-				this.personNumber = personNumber;
-				this.simulator = simulator;
-				this.register = register;
-			}
-
-			@Override
-			public void run(){
-				register.serve(this.personNumber);
-			}
-		}
+	public void setParam(Param param) {
+		this.param = param;
 	}
 
-	private class CloseStore extends Event{
-
-		public CloseStore(int eventTime) {
-			super(eventTime);
-		}
+	public Register getRegister(){
+		return this.register;
 	}
+
+	public Simulator getSimulator(){
+		return this.simulator;
+	}
+
+	public void setSimulator(Simulator simulator){
+		this.simulator = simulator;
+	}
+
+	public void setPersonsinsupermarket(int personsinsupermarket){
+		this.personsinsupermarket = personsinsupermarket;
+	}
+
+	public int getPersonsinsupermarket(){
+		return this.personsinsupermarket;
+	}
+
+	public void setMaxpersonsinsupermarket(int maxpersonsinsupermarket){
+		this.maxpersonsinsupermarket = maxpersonsinsupermarket;
+	}
+
+	public int getMaxpersonsinsupermarket(){
+		return this.maxpersonsinsupermarket;
+	}
+
 
 }
+
+
+

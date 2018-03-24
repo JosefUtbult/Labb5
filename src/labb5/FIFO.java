@@ -2,6 +2,12 @@ package labb5;
 
 import java.util.ArrayList;
 
+/**
+ * A class that holds a FIFO-queue (First in, first out) of integers.
+ * Designed to hold a queue of person numbers.
+ * @author Oscar Lundberg, Oscar Rosberg, Isak Sundell, Josef Utbult
+ */
+
 public class FIFO {
 
 	protected ArrayList<Integer> queue;
@@ -12,6 +18,10 @@ public class FIFO {
 
 	public void add(int value){
 		this.queue.add(value);
+	}
+
+	public double getInstance(int index){
+		return queue.get(index);
 	}
 
 	public int get(){

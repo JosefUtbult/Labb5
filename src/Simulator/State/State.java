@@ -1,36 +1,64 @@
 package Simulator.State;
 
+import Simulator.Event.Event;
 import Simulator.Simulator;
 
-import java.util.Date;
+import java.util.Observable;
 
-public class State {
+/**
+ * A class that holds the status of the simulation.
+ * @author Oscar Lundberg, Oscar Rosberg, Isak Sundell, Josef Utbult
+ */
+public class State extends Observable {
 
+	private boolean run;	//Describes if the simulator runs
+	protected StateViewer stateViewer;	//An object that observes the state, writing every update to the screen
+	protected double time;	//Current time in the simulation
 
-	private boolean run;
-	private long STARTTIME;
-
+	/**
+	 * Generates state
+	 */
 	public State(){
 		run = true;
-		STARTTIME = new Date().getTime();
+		time = 0;
+		
 	}
 
-	public long getSTARTTIME(){
-		return this.STARTTIME;
+	/**
+	 * Notifies the observers of an event.
+	 * @param event
+	 */
+	public void update(Event event){
+		this.setChanged();
+		this.notifyObservers(event);
 	}
 
+	/**
+	 * @return Returns run
+	 */
 	public boolean getRun() {
 		return run;
 	}
 
+	/**
+	 * @param run Sets run
+	 */
 	public void setRun(boolean run) {
 		this.run = run;
 	}
 
+
 	/**
-	 * @return Returns the current time in milliseconds in relation to the states STARTTIME.
+	 * @return Returns the current time in the simulation.
 	 */
-	public long getTime(){
-		return new Date().getTime() - getSTARTTIME();
+	public double getTime(){
+		return time;
+	}
+
+	/**
+	 * @param time sets the time in the simulation.
+	 */
+	public void setTime(double time){
+		this.time = time;
 	}
 }
