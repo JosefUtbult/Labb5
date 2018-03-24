@@ -2,44 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f734e7df-a905-4395-b2b7-7ea2cb84d948" name="Default" comment="A lot of more stuff.">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Labb5/Simulator/Event/Event.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Labb5/Simulator/Event/EventHolder$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Labb5/Simulator/Event/EventHolder.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Labb5/Simulator/Event/Start.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Labb5/Simulator/Event/Stop.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Labb5/Simulator/Simulator.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Labb5/Simulator/State/State.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Labb5/Simulator/State/StateViewer.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Labb5/Supermarket/SuperMarket$BuyShit.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Labb5/Supermarket/SuperMarket$CloseStore.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Labb5/Supermarket/SuperMarket$GeneratePerson.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Labb5/Supermarket/SuperMarket$Register$ServeCustomer.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Labb5/Supermarket/SuperMarket$Register.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Labb5/Supermarket/SuperMarket$SuperStart.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Labb5/Supermarket/SuperMarket.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Labb5/Supermarket/SupermarketState$AddPersonTime.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Labb5/Supermarket/SupermarketState$ByShitTime.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Labb5/Supermarket/SupermarketState$ServeTime.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Labb5/Supermarket/SupermarketState$TimeKeeper.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Labb5/Supermarket/SupermarketState.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Labb5/labb5/FIFO.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Labb5/labb5/Main.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Labb5/random/ExponentialRandomStream.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Labb5/random/UniformRandomStream.class" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output.txt" afterPath="$PROJECT_DIR$/output.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Simulator/Event/Event.java" afterPath="$PROJECT_DIR$/src/Simulator/Event/Event.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Simulator/Event/EventHolder.java" afterPath="$PROJECT_DIR$/src/Simulator/Event/EventHolder.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Simulator/Event/Start.java" afterPath="$PROJECT_DIR$/src/Simulator/Event/Start.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Simulator/Event/Stop.java" afterPath="$PROJECT_DIR$/src/Simulator/Event/Stop.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Simulator/Simulator.java" afterPath="$PROJECT_DIR$/src/Simulator/Simulator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Simulator/State/State.java" afterPath="$PROJECT_DIR$/src/Simulator/State/State.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Simulator/State/StateViewer.java" afterPath="$PROJECT_DIR$/src/Simulator/State/StateViewer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Supermarket/SuperMarket.java" afterPath="$PROJECT_DIR$/src/Supermarket/SuperMarket.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Supermarket/SupermarketState.java" afterPath="$PROJECT_DIR$/src/Supermarket/SupermarketState.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/labb5/FIFO.java" afterPath="$PROJECT_DIR$/src/labb5/FIFO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/labb5/Main.java" afterPath="$PROJECT_DIR$/src/labb5/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/random/ExponentialRandomStream.java" afterPath="$PROJECT_DIR$/src/random/ExponentialRandomStream.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -54,7 +17,7 @@
       <file leaf-file-name="Simulator.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Simulator/Simulator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="882">
+            <state relative-caret-position="0">
               <caret line="52" column="36" lean-forward="false" selection-start-line="52" selection-start-column="36" selection-end-line="52" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -69,8 +32,8 @@
       <file leaf-file-name="SuperMarket.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Supermarket/SuperMarket.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-724">
-              <caret line="34" column="43" lean-forward="false" selection-start-line="34" selection-start-column="43" selection-end-line="34" selection-end-column="43" />
+            <state relative-caret-position="378">
+              <caret line="21" column="7" lean-forward="true" selection-start-line="21" selection-start-column="7" selection-end-line="21" selection-end-column="7" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1348#1349#0" expanded="true" />
@@ -281,6 +244,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="SearchEverywhereHistoryKey" value="queue&#9;PSI&#9;JAVA://java.awt.Queue" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -404,10 +368,11 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="85002000" />
+    <option name="totallyTimeSpent" value="85410000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1920" height="1053" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -417,12 +382,12 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30513918" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30513918" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1921875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1921875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -509,13 +474,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Simulator/Event/Stop.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="27" column="38" lean-forward="false" selection-start-line="27" selection-start-column="38" selection-end-line="27" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Supermarket/SupermarketStateViewer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1008">
@@ -878,7 +836,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Simulator/Simulator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="882">
+        <state relative-caret-position="0">
           <caret line="52" column="36" lean-forward="false" selection-start-line="52" selection-start-column="36" selection-end-line="52" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -920,8 +878,8 @@
           <caret line="0" column="20" lean-forward="false" selection-start-line="0" selection-start-column="20" selection-end-line="0" selection-end-column="20" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#477#478#0" expanded="true" />
-            <element signature="e#537#538#0" expanded="true" />
+            <element signature="e#477#478#0" expanded="false" />
+            <element signature="e#537#538#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -941,8 +899,8 @@
         <state relative-caret-position="432">
           <caret line="26" column="33" lean-forward="false" selection-start-line="26" selection-start-column="33" selection-end-line="26" selection-end-column="33" />
           <folding>
-            <element signature="e#199#200#0" expanded="true" />
-            <element signature="e#236#237#0" expanded="true" />
+            <element signature="e#199#200#0" expanded="false" />
+            <element signature="e#236#237#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -967,10 +925,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar:///opt/ideaIU-2017.2.4/jdk-9.0.1_linux-x64_bin/jdk-9.0.1/lib/src.zip!/java.desktop/java/awt/EventQueue.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1520">
+          <caret line="1369" column="6" lean-forward="false" selection-start-line="1369" selection-start-column="6" selection-end-line="1369" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Supermarket/SuperMarket.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-724">
-          <caret line="34" column="43" lean-forward="false" selection-start-line="34" selection-start-column="43" selection-end-line="34" selection-end-column="43" />
+        <state relative-caret-position="378">
+          <caret line="21" column="7" lean-forward="true" selection-start-line="21" selection-start-column="7" selection-end-line="21" selection-end-column="7" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1348#1349#0" expanded="true" />
