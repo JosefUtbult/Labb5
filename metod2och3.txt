@@ -1,0 +1,95 @@
+EXEMPEL FÖR "METOD 2" OCH (OM SLUMPTALET SKIPPAS) "METOD 3"
+
+
+Exempel 1 (samma som sim1):
+
+Max som ryms, M..........: 5
+Ankomshastighet, lambda..: 1.0
+Plocktider, [P_min..Pmax]: [0.5..1.0]
+Betaltider, [K_min..Kmax]: [2.0..3.0]
+Frö, f...................: 1234
+
+Stängning sker tiden 10.0 och stophändelsen sker tiden 999.0.
+
+Minsta antal kassor som ger minimalt antal missade (0): 4
+
+
+-----
+
+Exempel 2 (nästan samma som sim1):
+
+Max som ryms, M..........: 7
+Ankomshastighet, lambda..: 2.0
+Plocktider, [P_min..Pmax]: [0.5..1.0]
+Betaltider, [K_min..Kmax]: [2.0..3.0]
+Frö, f...................: 1234
+
+Stängning sker tiden 10.0 och stophändelsen sker tiden 999.0.
+
+Minsta antal kassor som ger minimalt antal missade (2): 3
+(OBS! Missar som minst 2 kunder.)
+
+
+-----
+
+Exempel 3 (samma som sim2):
+
+Max som ryms, M..........: 7
+Ankomshastighet, lambda..: 3.0
+Plocktider, [P_min..Pmax]: [0.6..0.9]
+Betaltider, [K_min..Kmax]: [0.35..0.6]
+Frö, f...................: 13
+
+Stängning sker tiden 20.0 och stophändelsen sker tiden 999.0.
+
+Minsta antal kassor som ger minimalt antal missade (0): 3
+
+
+-----
+
+Exempel 4:
+
+Max som ryms, M..........: 100
+Ankomshastighet, lambda..: 50.0
+Plocktider, [P_min..Pmax]: [0.45..0,65]
+Betaltider, [K_min..Kmax]: [2.0..3.0]
+Frö, f...................: 42
+
+Stängning sker tiden 20.0 och stophändelsen sker tiden 999.0.
+
+Minsta antal kassor som ger minimalt antal missade (0): 14
+
+
+-----
+
+Exempel 5:
+
+Samma som ovan men med
+
+M = 1400
+lambda = 100.0
+
+Minsta antal kassor som ger minimalt antal missade(0): 9
+
+
+-----
+
+Exempel 6:
+
+Samma som exempel 5 men med
+
+lambda = 700.0      <== OBS!
+
+Minsta antal kassor som ger minimalt antal missade (0): 167
+
+
+-----
+
+Exempel 7:
+
+Samma som exempel 6 men med
+
+lambda = 2000.0      <== OBS!
+
+Minsta antal kassor som ger minimalt antal missade (5273): 525
+(OBS! Missar som minst 5273 kunder.)
